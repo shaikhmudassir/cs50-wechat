@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>WeChat - Contact</title>
+<link rel="stylesheet" href="{{url_for('static',filename='/css/maxcdn.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='/css/main.css')}}">
+{% endblock %}
+{% block body %}
+<div class="profile">
+
+<div class="avatar-icon">
+  <span>{{user}}</span>
+  <a href="/{{user}}">
+    <img src="{{url_for('static',filename='/img/')}}{{user}}.jpg" id="uploadImg">
+  </a>
+</div>
+<br>
+<a href="/logout"><button class="btn btn-danger">Log out</button></a>
+</div>
+<h1>WeChat</h1><hr>
+
+<div>
+  <form action="/" method="POST">
+    <input type="text" name="newFriend" class="form-control FC-sma" placeholder="Friend's Username">
+    <input type="submit" class="btn btn-sma" value="Add new friend">
+  </form>
+</div><hr>
+
+{% for row in select %}
+<div class="row profile-sma sideBar-body">
+  <a href="/{{row.sender}}-{{row.reciver}}">
+  <div class="col-sm-3 col-xs-3 sideBar-avatar">
+    <div class="avatar-icon">
+      <img src="{{url_for('static',filename='/img/')}}{{row.reciver}}.jpg">
+    </div>
+  </div>
+  <div class="col-sm-9 col-xs-9 sideBar-main">
+    <div class="row">
+      <div class="col-sm-8 col-xs-8 sideBar-name">
+        <span class="name-meta">{{row.reciver}}
+      </span>
+      </div>
+      <a></a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<!--
+<script>
+  var checkImg = "{{ checkImg }}"
+  if (checkImg == "False")
+  {
+    document.getElementById("uploadImg").src = "{{url_for('static',filename='/img/man-2-512.png')}}"
+    alert('Please..! set your Profile image.')
+  }
+</script>
+-->
+{% endblock %}
+
+

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>WeChat - Login</title>
+<link rel="stylesheet" href="{{url_for('static',filename='/css/boost.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}"> 
+{% endblock %}
+{% block body %}
+<div class="alert log-head" role="alert">
+  <h1>WeChat</h1><hr>
+</div>
+
+<div class="sbs-main">
+  <div class="log-sub">
+    <form action="/login/1" method="POST">
+      <h3>Log in</h3>
+      <input name="username" type="text" class="form-control log-input" placeholder="Username" required>
+      <input name="password" type="password" class="form-control log-input" placeholder="Password" required>
+      <input type="submit" class="btn btn-primary" id="btn-me" value="Login">
+    </form>
+  </div>
+  
+  <div class="log-sub" id="log-right">
+    <form action="/login/0" method="POST">
+      <h3>Register</h3>
+      <input name="username" type="text" class="form-control log-input" placeholder="Username" required>
+      <input name="password" type="password" class="form-control log-input" placeholder="Password" required>
+      <input name="confirmPassword" type="password" class="form-control log-input" placeholder="Confirm Password" required>
+      <input name="" type="submit" class="btn btn-primary" id="btn-me" value="Register">
+    </form>
+  </div>    
+</div>
+{% endblock %}
