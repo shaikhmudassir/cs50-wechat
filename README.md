@@ -1,5 +1,5 @@
 # WeChat - Web Chat Application
-<img src="https://github.com/shaikhmudassir/cs50-wechat/blob/master/static/img/7.JPG" width=400>
+<img src="https://github.com/shaikhmudassir/cs50-wechat/blob/master/static/img/7.JPG" width=800 width=800>
 
 
 WeChat is the new web chatting application.Where, we can chat with our Colleague and Friends on any platform.<br>
