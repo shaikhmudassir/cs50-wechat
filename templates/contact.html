@@ -6,7 +6,7 @@
 {% endblock %}
 {% block body %}
 <div class="profile">
-
+<div id="set-img-alert"></div>
 <div class="avatar-icon">
   <span>{{user}}</span>
   <a href="/{{user}}">
@@ -36,7 +36,7 @@
   <div class="col-sm-9 col-xs-9 sideBar-main">
     <div class="row">
       <div class="col-sm-8 col-xs-8 sideBar-name">
-        <span class="name-meta">{{row.reciver}}
+        <span class="name-meta">{{row.reciver[0] | upper}}{{row.reciver[1:]}}
       </span>
       </div>
       <a></a>
@@ -44,16 +44,12 @@
   </div>
 </div>
 {% endfor %}
-<!--
 <script>
   var checkImg = "{{ checkImg }}"
   if (checkImg == "False")
   {
     document.getElementById("uploadImg").src = "{{url_for('static',filename='/img/man-2-512.png')}}"
-    alert('Please..! set your Profile image.')
+    document.getElementById("set-img-alert").innerText = "Please set your Profile Image"
   }
 </script>
--->
 {% endblock %}
-
-
