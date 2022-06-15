@@ -8,7 +8,7 @@ import json
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://shaikhmudassir:asma19131pawmysql@shaikhmudassir.mysql.pythonanywhere-services.com/shaikhmudassir$default'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://shaikhmudassir:<PASSWORD>@shaikhmudassir.mysql.pythonanywhere-services.com/shaikhmudassir$default'
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = app.root_path + '/static/img/'
